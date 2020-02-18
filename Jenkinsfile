@@ -3,8 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'mvn --version'
-                sh 'cat /var/*release*'
+                sh 'echo "Hello World"'
             }
         }
     }
