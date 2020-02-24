@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'echo "Hello World New in Dev"'
+                sh 'echo "Hello World check the repos every minutes"'
             }
         }
     }
