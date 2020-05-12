@@ -1,10 +1,15 @@
-pipeline {
-    agent { docker { image 'maven:3.3.3' } }
-    stages {
-        stage('build') {
-            steps {
-                sh 'echo "Hello World check the repos every minutes"'
-            }
-        }
+node{
+    stage('CMS'){
+        echo 'Gathering code from version control...'
+    }
+    stage('Build'){
+        echo 'Building ...'
+        echo 'Building new feature ...'
+    }
+    stage('Test'){
+        echo 'Testing ...'
+    }
+    stage('Deploy'){
+        echo 'Deploying ...'
     }
 }
