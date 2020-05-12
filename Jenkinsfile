@@ -1,4 +1,7 @@
 node{
+    stage('CMS'){
+        echo 'Gathering code from version control...'
+    }
     stage('Build'){
         echo 'Building ...'
     }
