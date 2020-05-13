@@ -6,7 +6,7 @@ node{
     stage('Build'){
         try{
             echo 'Building ...'
-            releasenotes()
+            releasenotes(changes:"false")
         }catch(ex){
             echo 'something when wrong'
             echo ex.toString()
