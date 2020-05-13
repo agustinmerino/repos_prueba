@@ -21,7 +21,7 @@ def call(Map config=[:]){
     def date = new Date()
     def sdf  = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss")
     println "Date and Time Is: ${sdf.format(date)}"
-
+    println "Build Number is: ${BUILD_NUMBER}"
     if(config.changes != "false"){
         println "changes"
     }
