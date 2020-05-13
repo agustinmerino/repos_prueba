@@ -4,8 +4,16 @@ node{
         git branch:'${branch}' , url: 'https://github.com/FeynmanFan/JenkinsGroovy.git'
     }
     stage('Build'){
-        echo 'Building ...'
-        releasenotes()
+        try{
+            echo 'Building ...'
+            releasenotes()
+        }catch(ex){
+            echo 'something when wrong'
+            echo ex.toString()
+            current.Build.result = 'FAILURE'
+        }
+
+        
     }
     stage('Test'){
         echo 'Testing ...'
