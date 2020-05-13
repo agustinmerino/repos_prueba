@@ -21,16 +21,16 @@ def call(Map config=[:]){
     
         def date = new Date()
         def sdf  = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss")
-        println "Date and Time Is: ${sdf.format(date)}"
-        println "Build Number is: ${BUILD_NUMBER}"
+        writer.writeLine("Date and Time Is: ${sdf.format(date)}")
+        writer.writeLine("Build Number is: ${BUILD_NUMBER}")
 
         def changeLogSets = currentBuild.changeSets;
         for(change in changeLogSets){
             def entries = change.items;
             for(entry in entries){
-                echo "${entry.commitId} by ${entry.author} on ${new Date(entry.timestamp)}: ${entry.msg} "
+                writer.writeLine("${entry.commitId} by ${entry.author} on ${new Date(entry.timestamp)}: ${entry.msg} ")
                 for(file in entry.affectedFiles){
-                    echo "  ${file.editType.name} ${file.path}"
+                    writer.writeLine("  ${file.editType.name} ${file.path}")
                 }
 
             }
