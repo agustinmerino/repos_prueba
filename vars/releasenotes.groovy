@@ -17,4 +17,7 @@ def call(Map config=[:]){
                
             }
     }
+    if(config.changes() != "false"){
+        println "changes"
+    }
 }
