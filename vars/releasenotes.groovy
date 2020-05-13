@@ -1,5 +1,6 @@
 import java.io.*;
 import groovy.io.*;
+import java.text.*
 
 @NonCPS
 def call(Map config=[:]){
@@ -18,9 +19,9 @@ def call(Map config=[:]){
             }
     }
     def date = new Date()
-    def sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss")
+    def sdf  = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss")
     println "Date and Time Is: ${sdf.format(date)}"
-    
+
     if(config.changes != "false"){
         println "changes"
     }
